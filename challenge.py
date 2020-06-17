@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # prepare request
 url = "http://challenge.calmcode.io/attempt/"
-emb = [random.random() for i in range(100)]
+emb = get_emb()
 
 # make request, remember to use your email!
 payload = {"user": "Filip Danieluk",
@@ -16,9 +16,7 @@ payload = {"user": "Filip Danieluk",
 
 print(payload)
 
-sns.distplot(emb)
-plt.show()
-# resp = rq.post(url, json=payload)
+resp = rq.post(url, json=payload)
 
 # read response
-# print(resp.json())
+print(resp.json())
